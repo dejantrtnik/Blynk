@@ -36,6 +36,5 @@ def read_temp():
 while True:
         read_temp()
         blynk.virtual_write(2, format(sensor.read_temperature()))
-        #blynk.virtual_write(3, '{:.2f}'.format(sensor.read_pressure()/1000))
         blynk.virtual_write(3, '{0:0.1f}'.format(float(sensor.read_pressure())/100 +40))
 	time.sleep(3)
