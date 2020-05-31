@@ -7,7 +7,7 @@ import Adafruit_BMP.BMP085 as BMP085
 
 sensor = BMP085.BMP085()
 
-BLYNK_AUTH = 'token_key'
+BLYNK_AUTH = 'token_key' # vpišite osebno številko vašega ključa
 blynk = BlynkLib.Blynk(BLYNK_AUTH)
 os.system('modprobe w1-gpio')
 os.system('modprobe w1-therm')
