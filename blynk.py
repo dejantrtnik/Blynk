@@ -12,7 +12,7 @@ blynk = BlynkLib.Blynk(BLYNK_AUTH)
 os.system('modprobe w1-gpio')
 os.system('modprobe w1-therm')
 
-temp_sensor = '/sys/bus/w1/devices/28-0417511010ff/w1_slave'
+temp_sensor = '/sys/bus/w1/devices/28-0417511010ff/w1_slave'   # vpišite lastno številko senzorja - v mojem primeru je  "28-0417511010ff"
 
 def read_temp_raw():
     f = open(temp_sensor, 'r')
