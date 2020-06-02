@@ -4,7 +4,7 @@ primer python kode za Blynk aplikacijo
 z uporabo dveh senzorjev
 
 example Blynk code for 
-python 4 using two sensors
+python using two sensors
 
  - BMP180
  - DS18B20
