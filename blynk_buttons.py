@@ -12,7 +12,7 @@ def button_script():
     GPIO.setup(20,GPIO.OUT)
     GPIO.setup(21,GPIO.OUT)
     GPIO.setup(22, GPIO.IN)
-    blynk = BlynkLib.Blynk(xxxxxxxxxxxxxxxxxxxxxx)
+    blynk = BlynkLib.Blynk(xxxxxxx)
 
     v_array = ['0']
     @blynk.VIRTUAL_WRITE(v_array[0])
