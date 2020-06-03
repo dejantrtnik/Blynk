@@ -55,7 +55,7 @@ def button_script():
                     blynk.virtual_write(22,0)
             except:
                 internet = "err"
-                print("err - neznana napaka")
+                print("err - neznana napaka - izhod iz aplikacije")
                 time.sleep(3)
         elif internet == "err":
             print("Ponovni zagon skripte")
