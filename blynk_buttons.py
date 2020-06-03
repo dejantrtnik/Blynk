@@ -14,6 +14,8 @@ def button_script():
     GPIO.setup(22, GPIO.IN)
     blynk = BlynkLib.Blynk(xxxxxxx)
 
+    internet = "ok"
+
     v_array = ['0']
     @blynk.VIRTUAL_WRITE(v_array[0])
     def my_write_handler(value):
@@ -43,20 +45,20 @@ def button_script():
             print("LED off")
 
     while True:
-        try:
-            blynk.run()
-            if GPIO.input(22) == 1:
-                blynk.virtual_write(22,255)
-            elif GPIO.input(22) == 0:
-                blynk.virtual_write(22,0)
-        except:
-            internet = "err"
-            print("err - neznana napaka")
-            time.sleep(1)
-
-            if internet == "napaka":
-                button_script()
-            elif internet == "int":
-                print "Script terminating. Goodbye."
+        if internet == "ok":
+            try:
+                GPIO.setup(22, GPIO.LOW)
+                blynk.run()
+                if GPIO.input(22) == 1:
+                    blynk.virtual_write(22,255)
+                elif GPIO.input(22) == 0:
+                    blynk.virtual_write(22,0)
+            except:
+                internet = "err"
+                print("err - neznana napaka")
+                time.sleep(3)
+        elif internet == "err":
+            print("Ponovni zagon skripte")
+            button_script()
 
 button_script()
